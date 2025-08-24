@@ -44,7 +44,7 @@ public class Game {
 
     public TurnResult playerAttack() {
 
-        bot.showHand();
+
         player.showHand();
         System.out.println("Козир: " + trumpSuit);
         System.out.println("Виберіть карту для ходу (введіть індекс): ");
@@ -83,7 +83,7 @@ public class Game {
         int botIndex = random.nextInt(bot.getHand().size());
         Card botCard = bot.getHand().get(botIndex);
 
-        bot.showHand();
+
         player.showHand();
         System.out.println("Козир: " + trumpSuit);
         System.out.println("Бот атакує вас картою: " + botCard.getRank() + " " + botCard.getSuit());
@@ -92,7 +92,7 @@ public class Game {
         try {
 
         int index = scanner.nextInt();
-            while (index <= -1 || index >= player.getHand().size()) {
+            while (index < -1 || index >= player.getHand().size()) {
                 System.out.println("Невірний індекс. Спробуйте ще раз.");
                 index = scanner.nextInt();
             }
@@ -104,7 +104,7 @@ public class Game {
             player.getHand().add(botCard);
             bot.getHand().remove(botIndex);
             System.out.println("Ви взяли карту: " + botCard.getRank() + " " + botCard.getSuit());
-            return TurnResult.LOSE;
+            return TurnResult.WIN;
         }
 
         Card playerCard = player.getHand().get(index);
@@ -112,7 +112,7 @@ public class Game {
             player.getHand().remove(index);
             System.out.println("Ви побили карту бота: " + botCard.getRank() + " " + botCard.getSuit() + " картою: " + playerCard.getRank() + " " + playerCard.getSuit());
             bot.getHand().remove(botIndex);
-            return TurnResult.WIN;
+            return TurnResult.LOSE;
         } else
             return TurnResult.LOSE;
         } catch (Exception e) {

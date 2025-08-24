@@ -16,7 +16,7 @@ public class Bot   {
         return hand;
     }
     public void showHand() {
-        System.out.println("players.Bot's hand:");
+        System.out.println("Bot's hand:");
         for (int i = 0; i < hand.size(); i++) {
             Card c = hand.get(i);
             System.out.println(i + ": [" + c.getRank() + " " + c.getSuit() + "]");

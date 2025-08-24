@@ -1,7 +1,7 @@
 package components;
 
 public enum Rank {
-    ШІСТАКА(6),
+    ШІСТКА(6),
     СІМКА(7),
     ВІСІМКА(8),
     ДЕВЯТКА(9),
