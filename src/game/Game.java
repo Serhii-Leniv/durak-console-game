@@ -1,5 +1,9 @@
+package game;
+
 import components.Suit;
 import components.TurnResult;
+import players.Bot;
+import players.Player;
 
 import java.util.ArrayList;
 import java.util.Random;

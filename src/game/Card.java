@@ -1,9 +1,11 @@
+package game;
+
 import components.Rank;
 import components.Suit;
 
 public class Card {
-    private Suit suit;
-    private Rank rank;
+    private final Suit suit;
+    private final Rank rank;
 
     public Card(Suit suit, Rank rank) {
         this.suit = suit;
@@ -21,7 +23,7 @@ public class Card {
     public boolean canBeat(Card other, Suit trump) {
         // 1. Якщо ця карта козир, а інша ні — б'є
         if (this.suit == trump && other.suit != trump) return true;
-        // 2. Якщо ця карта не козир, а інша козир — не б'є
+        // 2. Якщо ця карта не козир, а інший козир — не б'є
         if (this.suit != trump && other.suit == trump) return false;
         // 3. Якщо обидві карти однієї масті — порівнюємо ранг
         if (this.suit == other.suit) return this.rank.getValue() > other.rank.getValue();
@@ -31,7 +33,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
+        return "game.Card{" +
                 "suit=" + suit +
                 ", rank=" + rank +
                 '}';

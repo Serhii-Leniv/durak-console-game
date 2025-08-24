@@ -1,4 +1,7 @@
-import components.Suit;
+import game.Deck;
+import game.Game;
+import players.Bot;
+import players.Player;
 
 
 public class Main {
